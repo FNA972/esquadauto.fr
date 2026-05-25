@@ -1,0 +1,4431 @@
+# esquadauto.fr<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Esquad Auto Expert — Teintage de vitres en Martinique</title>
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512-round.png">
+
+<!-- Open Graph / Partage WhatsApp & réseaux sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Esquad Auto Expert — Teintage de vitres en Martinique">
+<meta property="og:description" content="Spécialiste du teintage de vitres automobiles en Martinique. Qualité, rapidité et prix justes.">
+<meta property="og:image" content="partage-whatsapp.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="partage-whatsapp.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-snap-type:y proximity;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    font-family:'Inter',sans-serif;
+    background:#050505;
+    position:relative;
+}
+
+/* Supprime la scrollbar mais garde le scroll */
+
+html,
+body{
+    scrollbar-width:none; /* Firefox */
+    -ms-overflow-style:none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+    display:none; /* Chrome/Safari/Opera */
+}
+
+/* Ensure video is visible below all sections */
+html{ background:#050505; }
+
+body{
+    color:white;
+}
+
+.global-dots{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cline x1='20' y1='14' x2='20' y2='26' stroke='rgba(255,255,255,0.18)' stroke-width='1.5'/%3E%3Cline x1='14' y1='20' x2='26' y2='20' stroke='rgba(255,255,255,0.18)' stroke-width='1.5'/%3E%3C/svg%3E");
+
+    background-size:40px 40px;
+
+    opacity:.72;
+
+    animation:dotsFloat 14s linear infinite;
+}
+
+header{
+    position:fixed;
+
+    transition:
+    transform .7s cubic-bezier(.16,1,.3,1),
+    background .5s ease,
+    backdrop-filter .5s ease;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 30px;
+
+    z-index:100;
+
+    background:rgba(6,8,12,.52);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    backdrop-filter:blur(26px) saturate(180%);
+    -webkit-backdrop-filter:blur(26px) saturate(180%);
+
+    border-radius:0;
+
+    box-shadow:
+    0 10px 50px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.header-logo{
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.header-logo img{
+    width:68px;
+    height:auto;
+    object-fit:contain;
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+
+.gallery-section{
+    position:relative;
+
+    height:calc(100vh - 78px);
+    min-height:calc(100vh - 78px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0;
+
+    background:transparent;
+
+    overflow:hidden;
+}
+
+.gallery-container{
+    min-height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    position:relative;
+    z-index:2;
+
+    width:min(1280px,92%);
+
+    margin:auto;
+
+    transform:translateY(-50px);
+}
+
+.gallery-heading{
+    text-align:center;
+
+    max-width:820px;
+
+    margin:0 auto 0px;
+}
+
+.gallery-heading h2{
+    font-size:clamp(46px,4vw,72px);
+    font-weight:700;
+    line-height:.96;
+    letter-spacing:-0.06em;
+
+    margin-bottom:24px;
+}
+
+.gallery-heading p{
+    font-size:16px;
+    line-height:1.8;
+
+    color:rgba(255,255,255,.58);
+}
+
+.gallery-slider{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:24px;
+}
+
+.fullscreen-btn{
+    position:absolute;
+    right:18px;
+    bottom:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:rgba(255,255,255,.78);
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:.28s ease;
+}
+
+.fullscreen-btn:hover{
+    color:white;
+
+    transform:scale(1.12);
+}
+
+.fullscreen-btn svg{
+    width:18px;
+    height:18px;
+}
+
+.gallery-track{
+    isolation:isolate;
+    position:relative;
+
+    width:min(1100px,100%);
+    height:68vh;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(20px);
+}
+
+.gallery-slide{
+    position:absolute;
+    inset:0;
+
+    opacity:0;
+
+    transition:1s cubic-bezier(.16,1,.3,1);
+}
+
+.active-slide{
+    opacity:1;
+}
+
+.gallery-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    display:block;
+}
+
+.gallery-btn{
+    border:none;
+
+    background:transparent;
+
+    color:rgba(255,255,255,.72);
+
+    font-size:38px;
+    font-weight:300;
+
+    cursor:pointer;
+
+    transition:.35s cubic-bezier(.16,1,.3,1);
+}
+
+.gallery-btn:hover{
+    color:white;
+
+    transform:scale(1.06);
+}
+
+@media(max-width:768px){
+
+.gallery-section{
+        height:auto;
+        min-height:auto;
+        padding:100px 0 60px;
+    }
+
+.gallery-track{
+        height:300px;
+        border-radius:16px;
+    }
+
+.gallery-btn{
+        font-size:30px;
+    }
+
+.gallery-container{
+        transform:translateY(0);
+        padding:0 4%;
+    }
+
+.gallery-heading h2{
+        font-size:clamp(28px,8vw,42px);
+        margin-bottom:16px;
+    }
+
+.gallery-slider{
+        gap:10px;
+    }
+
+.header-views{
+        display:none;
+    }
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+nav a{
+    position:relative;
+
+    color:rgba(255,255,255,.58);
+
+    text-decoration:none;
+
+    font-size:13.5px;
+    font-weight:500;
+
+    letter-spacing:.04em;
+
+    transition:.35s cubic-bezier(.16,1,.3,1);
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:1px;
+
+    background:white;
+
+    transition:.35s cubic-bezier(.16,1,.3,1);
+}
+
+nav a:hover{
+    color:rgba(255,255,255,.92);
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+section{
+    scroll-snap-align:start;
+}
+
+.hero{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding-top:78px;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.hero-image{
+    display:none;
+}
+
+/* =========================
+   GRID OVERLAY
+========================= */
+
+.grid-overlay{
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 1.2px),
+    radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+
+    background-size:
+    42px 42px,
+    16px 16px;
+
+    background-position:
+    center center,
+    center center;
+
+    opacity:.9;
+
+    z-index:2;
+
+    animation:
+    gridPulse 4s ease-in-out infinite,
+    gridDisappear 2.8s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.grid-overlay::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at center,
+    transparent 0%,
+    rgba(0,0,0,.04) 30%,
+    rgba(0,0,0,.88) 100%);
+
+    mask-image:
+    radial-gradient(circle at center,
+    black 12%,
+    transparent 78%);
+}
+
+.grid-overlay::after{
+    mix-blend-mode:screen;
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at center,
+    rgba(255,255,255,.08),
+    transparent 55%);
+
+    filter:blur(160px);
+}
+
+/* =========================
+   NOISE
+========================= */
+
+.noise{
+    position:absolute;
+    inset:0;
+
+    opacity:.035;
+
+    background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+
+    mix-blend-mode:overlay;
+
+    z-index:3;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+    margin-top:0;
+
+    position:relative;
+    z-index:5;
+
+    text-align:center;
+
+    width:min(860px,88%);
+
+    opacity:0;
+    transform:translate3d(0,28px,0);
+    filter:blur(6px);
+
+    will-change:transform, opacity, filter;
+
+    animation:
+    contentReveal 2.4s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation-delay:.15s;
+}
+
+.label{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    margin-bottom:30px;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:white;
+
+    box-shadow:0 0 20px rgba(255,255,255,.9);
+}
+
+.hero-logo-glitch{
+    position:relative;
+    width:min(380px,28vw);
+    margin:0 auto 18px;
+    display:block;
+    pointer-events:none;
+}
+
+.hero-logo{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    display:block;
+    user-select:none;
+    pointer-events:none;
+}
+
+.glitch-base{
+    position:relative;
+    z-index:1;
+    filter:drop-shadow(0 10px 40px rgba(0,0,0,.45));
+}
+
+.glitch-red{
+    position:absolute;
+    top:0; left:0;
+    z-index:2;
+    opacity:.75;
+    mix-blend-mode:screen;
+    pointer-events:none;
+}
+
+.glitch-blue{
+    position:absolute;
+    top:0; left:0;
+    z-index:3;
+    opacity:.75;
+    mix-blend-mode:screen;
+    pointer-events:none;
+}
+
+.hero-text{
+    max-width:1080px;
+    margin:auto;
+}
+
+.hero-subtitle{
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,.52);
+
+    margin-bottom:16px;
+}
+
+.hero-title{
+    font-size:clamp(42px,4vw,64px);
+    font-weight:700;
+    line-height:1.05;
+    letter-spacing:-0.06em;
+    white-space:nowrap;
+
+    color:rgba(255,255,255,.96);
+
+    margin-bottom:20px;
+}
+
+.hero-description{
+    font-size:17px;
+    font-weight:400;
+    line-height:1.6;
+
+    color:rgba(255,255,255,.78);
+
+    margin-bottom:18px;
+}
+
+.hero-smalltext{
+    font-size:13px;
+    font-weight:300;
+    line-height:1.7;
+
+    color:rgba(255,255,255,.58);
+
+    max-width:640px;
+
+    margin:auto;
+}
+
+.buttons{
+    margin-top:34px;
+
+    display:flex;
+    justify-content:center;
+    gap:18px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    height:50px;
+    padding:0 24px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.35s cubic-bezier(.16,1,.3,1);
+}
+
+.btn-primary{
+    background:#1877F2;
+    color:white;
+
+    box-shadow:
+    0 10px 40px rgba(24,119,242,.35);
+}
+
+.btn-primary:hover{
+    background:#1463cc;
+    transform:translateY(-3px) scale(1.02);
+    box-shadow:0 14px 48px rgba(24,119,242,.5);
+}
+
+.btn-secondary{
+    background:rgba(255,255,255,.035);
+    color:white;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,.08);
+    transform:translateY(-3px);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes imageReveal{
+
+    0%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes gridPulse{
+
+    0%,100%{
+        opacity:.92;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+@keyframes gridDisappear{
+
+    0%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    60%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.08);
+    }
+}
+
+@keyframes contentReveal{
+
+    0%{
+        opacity:0;
+        transform:translate3d(0,28px,0) scale(.985);
+        filter:blur(6px);
+    }
+
+    45%{
+        opacity:.72;
+        filter:blur(2px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translate3d(0,0,0) scale(1);
+        filter:blur(0px);
+    }
+}
+
+/* =========================
+   SERVICES SECTION
+========================= */
+
+#prestations,
+#realisations,
+#avis,
+#contact{
+    scroll-margin-top:78px;
+}
+
+.services-section{
+    position:relative;
+
+    height:calc(100vh - 78px);
+    min-height:calc(100vh - 78px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0;
+
+    background:transparent;
+
+    overflow:hidden;
+}
+
+.services-background{
+    display:none;
+}
+
+.services-overlay{
+    display:none;
+}
+
+.services-container{
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    position:relative;
+    z-index:2;
+
+    width:min(1280px,92%);
+
+    margin:auto;
+}
+
+.services-heading{
+    opacity:0;
+    transform:translateY(60px);
+    filter:blur(12px);
+
+    animation:servicesReveal 1.6s cubic-bezier(.16,1,.3,1) forwards;
+    animation-play-state:paused;
+
+
+    text-align:center;
+
+    max-width:860px;
+
+    margin:0 auto 34px;
+}
+
+.services-label{
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    color:rgba(255,255,255,.48);
+
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.24em;
+
+    text-transform:uppercase;
+}
+
+.services-heading h2{
+    font-size:clamp(42px,4vw,68px);
+    font-weight:700;
+    line-height:1;
+    letter-spacing:-0.05em;
+
+    margin-bottom:24px;
+
+    color:white;
+}
+
+.services-heading p{
+    font-size:17px;
+    line-height:1.7;
+
+    color:rgba(255,255,255,.58);
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+.service-card{
+    opacity:0;
+    transform:translateY(80px) scale(.96);
+    filter:blur(14px);
+
+    animation:cardReveal 1.4s cubic-bezier(.16,1,.3,1) forwards;
+    animation-play-state:paused;
+
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    backdrop-filter:blur(24px);
+
+    transition:.6s cubic-bezier(.16,1,.3,1);
+}
+
+.service-card:nth-child(2){
+    animation-delay:.12s;
+}
+
+.service-card:nth-child(3){
+    animation-delay:.24s;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(255,255,255,.12);
+}
+
+.service-card img,
+.service-card video{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+
+    display:block;
+
+    background:#000;
+
+    transition:1s cubic-bezier(.16,1,.3,1);
+}
+
+.service-card:hover img,
+.service-card:hover video{
+    transform:scale(1.05);
+}
+
+.service-content{
+    padding:24px;
+}
+
+.service-content h3{
+    font-size:21px;
+    font-weight:600;
+
+    margin-bottom:14px;
+
+    color:white;
+}
+
+.service-content p{
+    font-size:14px;
+    line-height:1.8;
+
+    color:rgba(255,255,255,.58);
+}
+
+@keyframes dotsFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes servicesReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+        filter:blur(12px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+        filter:blur(0px);
+    }
+}
+
+@keyframes cardReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(80px) scale(.96);
+        filter:blur(14px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0px);
+    }
+}
+
+/* =========================
+   DETAIL SECTIONS
+========================= */
+
+.detail-section{
+    position:relative;
+
+    height:calc(100vh - 78px);
+    min-height:calc(100vh - 78px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0;
+
+    background:transparent;
+
+    overflow:visible;
+}
+
+.dark-section{
+    background:transparent;
+}
+
+.detail-container{
+    height:100%;
+
+    overflow:visible;
+
+
+    position:relative;
+    z-index:2;
+
+    width:min(1280px,92%);
+
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+
+    align-items:center;
+}
+
+.reverse-layout{
+    direction:rtl;
+}
+
+.reverse-layout > *{
+    direction:ltr;
+}
+
+.detail-image{
+    position:relative;
+
+    overflow:visible;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(20px);
+}
+
+.detail-image img,
+.detail-image video{
+    border-radius:18px;
+    width:100%;
+    height:54vh;
+    object-fit:cover;
+
+    display:block;
+
+    transition:1.2s cubic-bezier(.16,1,.3,1);
+}
+
+.detail-image:hover img,
+.detail-image:hover video{
+    transform:scale(1.04);
+}
+
+.covering-slider{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.covering-slider .detail-image{
+    flex:1;
+    min-width:0;
+}
+
+.cover-track{
+    position:relative;
+    width:100%;
+    height:54vh;
+
+    overflow:visible;
+}
+
+/* BUG FIX: each slider uses its own scoped slide class */
+.cover-slide,
+.film-slide,
+.phare-slide {
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+    border-radius:18px;
+}
+
+.active-cover,
+.active-film,
+.active-phare {
+    opacity:1;
+}
+
+.cover-prev,
+.cover-next,
+.film-prev,
+.film-next,
+.phare-prev,
+.phare-next{
+    flex-shrink:0;
+
+    border:none;
+
+    background:transparent;
+
+    color:rgba(255,255,255,.72);
+
+    font-size:38px;
+    font-weight:300;
+
+    cursor:pointer;
+
+    transition:.35s cubic-bezier(.16,1,.3,1);
+}
+
+.cover-prev:hover,
+.cover-next:hover,
+.film-prev:hover,
+.film-next:hover,
+.phare-prev:hover,
+.phare-next:hover{
+    color:white;
+
+    transform:scale(1.06);
+}
+
+.detail-content{
+    position:relative;
+
+    z-index:5;
+
+    max-width:560px;
+}
+
+.detail-tag{
+    display:inline-block;
+
+    margin-bottom:22px;
+
+    color:rgba(255,255,255,.48);
+
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+}
+
+.detail-content h2{
+    font-size:clamp(46px,4.2vw,78px);
+    font-weight:700;
+    line-height:.95;
+    letter-spacing:-0.06em;
+
+    margin-bottom:28px;
+
+    color:white;
+}
+
+.detail-content p{
+    font-size:16px;
+    line-height:1.9;
+
+    color:rgba(255,255,255,.62);
+
+    margin-bottom:22px;
+}
+
+.reveal-left,
+.reveal-right{
+    opacity:0;
+    filter:blur(12px);
+
+    transition:
+    1.4s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal-left{
+    transform:translateX(-80px);
+}
+
+.reveal-right{
+    transform:translateX(80px);
+}
+
+.reveal-visible{
+    opacity:1;
+    transform:translateX(0px);
+    filter:blur(0px);
+}
+
+@media(max-width:768px){
+
+
+.detail-section{
+        height:auto;
+        min-height:auto;
+        padding:80px 0 60px;
+    }
+
+.detail-container{
+        height:auto;
+        grid-template-columns:1fr;
+        gap:32px;
+        padding:0 4%;
+    }
+
+.reverse-layout{
+        direction:ltr;
+    }
+
+.covering-slider{
+        gap:10px;
+    }
+
+.detail-image img,
+    .detail-image video{
+        height:260px;
+    }
+
+.cover-track{
+        height:260px;
+    }
+
+.cover-slide,
+    .film-slide,
+    .phare-slide{
+        height:260px;
+    }
+
+.detail-content{
+        max-width:100%;
+    }
+
+.detail-content h2{
+        font-size:clamp(28px,7vw,38px);
+        letter-spacing:-0.03em;
+        margin-bottom:18px;
+    }
+
+.detail-content p{
+        font-size:15px;
+    }
+
+/* Sections 3-4-5 : titre avant image, texte après sur mobile.
+   Le JS déplace le h2 avant le covering-slider.
+   On garde display:grid (1 col) du .detail-container général. */
+
+/* Sur mobile, le h2 déplacé utilise translateY pour éviter le scroll horizontal */
+#film-solaire .detail-container > h2.reveal-left,
+#covering .detail-container > h2.reveal-left,
+#phares .detail-container > h2.reveal-left{
+        transform:translateY(40px);
+    }
+
+#film-solaire .detail-container > h2.reveal-left.reveal-visible,
+#covering .detail-container > h2.reveal-left.reveal-visible,
+#phares .detail-container > h2.reveal-left.reveal-visible{
+        transform:translateY(0px);
+    }
+
+#film-solaire .covering-slider.reveal-left,
+#covering .covering-slider.reveal-left,
+#phares .covering-slider.reveal-left{
+        transform:translateY(40px);
+    }
+
+#film-solaire .covering-slider.reveal-left.reveal-visible,
+#covering .covering-slider.reveal-left.reveal-visible,
+#phares .covering-slider.reveal-left.reveal-visible{
+        transform:translateY(0px);
+    }
+
+#film-solaire .detail-content h2,
+#covering .detail-content h2,
+#phares .detail-content h2{
+        font-size:clamp(28px,7vw,38px);
+        letter-spacing:-0.03em;
+        margin-bottom:0;
+    }
+
+#film-solaire .detail-content p,
+#covering .detail-content p,
+#phares .detail-content p{
+        font-size:15px;
+    }
+
+
+.services-section{
+        height:auto;
+        min-height:auto;
+        padding:80px 0 60px;
+    }
+
+.services-container,
+    .gallery-container{
+        height:auto;
+    }
+
+.services-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+.service-card img{
+        height:200px;
+    }
+
+.services-heading h2{
+        font-size:clamp(28px,7vw,42px);
+    }
+
+
+html,
+body{
+        overflow:auto;
+    }
+
+
+/* HEADER MOBILE : logo + hamburger, nav cachée par défaut */
+header{
+        height:64px;
+        padding:0 18px;
+        border-radius:0;
+        justify-content:space-between;
+    }
+
+.header-logo img{
+        width:56px;
+    }
+
+/* Hamburger button */
+.hamburger{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        gap:5px;
+        width:36px;
+        height:36px;
+        background:transparent;
+        border:none;
+        cursor:pointer;
+        padding:4px;
+        z-index:200;
+    }
+
+.hamburger span{
+        display:block;
+        width:22px;
+        height:1.5px;
+        background:rgba(255,255,255,.78);
+        border-radius:2px;
+        transition:.35s cubic-bezier(.16,1,.3,1);
+        transform-origin:center;
+    }
+
+.hamburger.open span:nth-child(1){
+        transform:translateY(6.5px) rotate(45deg);
+    }
+
+.hamburger.open span:nth-child(2){
+        opacity:0;
+        transform:scaleX(0);
+    }
+
+.hamburger.open span:nth-child(3){
+        transform:translateY(-6.5px) rotate(-45deg);
+    }
+
+/* Header, nav et hamburger : complètement cachés sur mobile */
+header{
+        display: none;
+    }
+
+nav{
+        display: none;
+    }
+
+.hamburger{
+        display: none;
+    }
+
+
+.hero{
+        padding-top: 0;
+        min-height:100svh;
+        height:100svh;
+    }
+
+.hero-logo-glitch{
+        width:min(150px,42vw);
+        margin-bottom:14px;
+    }
+
+.hero-subtitle{
+        font-size:11px;
+        letter-spacing:.1em;
+    }
+
+.hero-title{
+        font-size:clamp(28px,8vw,40px);
+        white-space:normal !important;
+        letter-spacing:-0.04em;
+    }
+
+.hero-description{
+        font-size:15px;
+        margin-bottom:12px;
+    }
+
+.hero-smalltext{
+        font-size:12.5px;
+        line-height:1.65;
+    }
+
+.content{
+        width:92%;
+    }
+
+.buttons{
+        margin-top:24px;
+        gap:12px;
+    }
+
+.btn{
+        height:46px;
+        padding:0 20px;
+        font-size:14px;
+    }
+
+
+
+/* Flèches de navigation : cachées sur mobile */
+#sectionArrow,
+#sectionArrowUp {
+        display: none;
+    }
+
+}
+
+
+@media(max-width:768px){
+    html{
+        scroll-snap-type: none;
+    }
+    section{
+        scroll-snap-align: none;
+    }
+}
+
+/* Smartphones très petits */
+@media(max-width:380px){
+    .hero-title{ font-size:26px; }
+    .detail-content h2{ font-size:26px; }
+    .services-heading h2{ font-size:26px; }
+}
+
+/* =========================
+   ANTI-LAYOUT-SHIFT : typing sur mobile
+   On réserve une hauteur fixe pour les lignes
+   qui contiennent les spans animés, pour que
+   le reflow du texte ne déplace pas la page.
+========================= */
+@media(max-width:768px){
+
+    /* Hero : "Le meilleur" sur une ligne, typing sur la suivante */
+    .hero-title {
+        white-space: normal !important;
+        min-height: auto;
+        line-height: 1.15;
+    }
+
+    /* Force "Le meilleur" + typing à se comporter comme du texte normal */
+    #typing,
+    .hero-title .typing-cursor {
+        display: inline;
+        white-space: normal;
+    }
+
+    /* Prestations */
+    .services-heading h2 {
+        white-space: normal;
+        min-height: auto;
+        line-height: 1.1;
+    }
+
+    /* Galerie */
+    .gallery-heading h2 {
+        white-space: normal;
+        min-height: 2.4em;
+        line-height: 1.1;
+    }
+
+    /* Curseur : stable, ne crée pas de saut */
+    .typing-cursor {
+        display: inline-block;
+        width: auto;
+    }
+}
+
+
+/* =========================
+   AVIS SECTION
+========================= */
+
+.avis-carousel-wrapper{
+    padding-top:10px;
+}
+
+.avis-section{
+    position:relative;
+    height:calc(100vh - 78px);
+    min-height:calc(100vh - 78px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+    overflow:hidden;
+}
+
+.avis-dots{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cline x1='20' y1='14' x2='20' y2='26' stroke='rgba(255,255,255,0.18)' stroke-width='1.5'/%3E%3Cline x1='14' y1='20' x2='26' y2='20' stroke='rgba(255,255,255,0.18)' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size:40px 40px;
+    opacity:.72;
+    mask-image:radial-gradient(circle at center, black 40%, transparent 100%);
+    animation:dotsFloat 14s linear infinite;
+}
+
+.avis-container{
+    position:relative;
+    z-index:2;
+    width:min(1280px,92%);
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:48px;
+}
+
+.avis-heading{
+    text-align:center;
+}
+
+.avis-label{
+    display:inline-block;
+    margin-bottom:14px;
+    color:rgba(255,255,255,.48);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+}
+
+.avis-heading h2{
+    font-size:clamp(36px,4vw,64px);
+    font-weight:700;
+    line-height:.95;
+    letter-spacing:-0.05em;
+    color:white;
+    margin-bottom:20px;
+}
+
+.avis-global{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+}
+
+.avis-stars-big{
+    font-size:22px;
+    color:#facc15;
+    letter-spacing:2px;
+}
+
+.avis-global-info{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:4px;
+}
+
+.avis-note{
+    font-size:22px;
+    font-weight:700;
+    color:white;
+}
+
+.avis-link{
+    font-size:12px;
+    color:rgba(255,255,255,.45);
+    text-decoration:none;
+    transition:.3s ease;
+}
+
+.avis-link:hover{
+    color:rgba(255,255,255,.8);
+}
+
+.avis-carousel-wrapper{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+
+.avis-carousel-wrapper::before,
+.avis-carousel-wrapper::after{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:120px;
+    z-index:2;
+    pointer-events:none;
+}
+.avis-carousel-wrapper::before{
+    left:0;
+    background:linear-gradient(to right, #050505 0%, transparent 100%);
+}
+.avis-carousel-wrapper::after{
+    right:0;
+    background:linear-gradient(to left, #050505 0%, transparent 100%);
+}
+
+.avis-track{
+    display:flex;
+    gap:20px;
+    width:max-content;
+    animation: avisScroll 35s linear infinite;
+    will-change: transform;
+    animation-play-state: running !important;
+}
+
+@keyframes avisScroll{
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.avis-card{
+    flex:0 0 340px;
+    width:340px;
+
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:18px;
+    backdrop-filter:blur(20px);
+
+    padding:24px;
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+    transition:border-color .3s ease, transform .3s ease;
+}
+
+.avis-card:hover{
+    border-color:rgba(255,255,255,.16);
+    transform:translateY(-4px);
+}
+
+.avis-card-header{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.avis-avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#3b82f6,#1d4ed8);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    font-weight:700;
+    color:white;
+    flex-shrink:0;
+}
+
+.avis-card-info{
+    flex:1;
+}
+
+.avis-card-name{
+    font-size:14px;
+    font-weight:600;
+    color:white;
+}
+
+.avis-card-stars{
+    font-size:13px;
+    color:#facc15;
+    letter-spacing:1px;
+}
+
+.avis-google-icon{
+    width:20px;
+    height:20px;
+    object-fit:contain;
+    opacity:.7;
+}
+
+.avis-card-text{
+    font-size:14px;
+    line-height:1.8;
+    color:rgba(255,255,255,.62);
+    flex:1;
+}
+
+.avis-card-date{
+    font-size:12px;
+    color:rgba(255,255,255,.3);
+}
+
+@media(max-width:768px){
+    .avis-section{
+        height:auto;
+        min-height:auto;
+        padding:80px 0 60px;
+    }
+    .avis-heading h2{
+        font-size:clamp(28px,7vw,42px);
+    }
+    .avis-card{
+        flex:0 0 260px;
+        width:260px;
+        padding:18px;
+    }
+    .avis-carousel-wrapper::before,
+    .avis-carousel-wrapper::after{
+        width:40px;
+    }
+    .avis-container{
+        gap:32px;
+    }
+}
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq-section{
+    position:relative;
+    min-height:calc(100vh - 78px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+    overflow:hidden;
+    padding:100px 0;
+}
+
+
+
+.faq-container{
+    position:relative;
+    z-index:2;
+    width:min(860px,92%);
+    margin:auto;
+}
+
+.faq-heading{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.faq-label{
+    display:inline-block;
+    margin-bottom:14px;
+    color:rgba(255,255,255,.48);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+}
+
+.faq-heading h2{
+    font-size:clamp(36px,4vw,64px);
+    font-weight:700;
+    line-height:1;
+    letter-spacing:-0.05em;
+    color:white;
+}
+
+.faq-list{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.faq-item{
+    border-bottom:1px solid rgba(255,255,255,.08);
+    border-radius:0;
+    opacity:0;
+    transform:translateY(24px);
+    filter:blur(8px);
+    transition:
+        opacity .7s cubic-bezier(.16,1,.3,1),
+        transform .7s cubic-bezier(.16,1,.3,1),
+        filter .7s cubic-bezier(.16,1,.3,1),
+        background .3s ease;
+    overflow:hidden;
+}
+
+.faq-item.faq-visible{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+}
+
+/* état ouvert : fond bleu très léger comme la ref */
+.faq-item:has(.faq-question[aria-expanded="true"]){
+    background:rgba(59,130,246,.07);
+    border-color:rgba(96,165,250,.18);
+}
+
+.faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:22px 24px;
+    color:rgba(255,255,255,.82);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    font-weight:500;
+    line-height:1.4;
+    text-align:left;
+    transition:color .25s ease, background .25s ease;
+}
+
+.faq-question:hover{
+    color:white;
+    background:rgba(255,255,255,.03);
+}
+
+.faq-question[aria-expanded="true"]{
+    color:white;
+    font-weight:600;
+}
+
+.faq-chevron{
+    width:20px;
+    height:20px;
+    flex-shrink:0;
+    color:rgba(255,255,255,.35);
+    transition:transform .4s cubic-bezier(.16,1,.3,1), color .25s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-chevron{
+    transform:rotate(180deg);
+    color:rgba(96,165,250,.9);
+}
+
+.faq-answer{
+    overflow:hidden;
+    max-height:0;
+    transition:max-height .45s cubic-bezier(.16,1,.3,1);
+}
+
+.faq-answer p{
+    padding:0 24px 24px;
+    font-size:15px;
+    line-height:1.85;
+    color:rgba(255,255,255,.58);
+}
+
+.faq-answer p strong{
+    color:rgba(255,255,255,.82);
+    font-weight:600;
+}
+
+@media(max-width:768px){
+    .faq-section{
+        padding:80px 0 60px;
+        min-height:auto;
+    }
+    .faq-heading{
+        margin-bottom:40px;
+    }
+    .faq-heading h2{
+        font-size:clamp(28px,7vw,42px);
+    }
+    .faq-question{
+        font-size:14px;
+        padding:16px 14px;
+        gap:12px;
+    }
+    .faq-answer p{
+        padding:0 14px 18px;
+        font-size:14px;
+    }
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section{
+    position:relative;
+
+    height:calc(100vh - 78px);
+    min-height:calc(100vh - 78px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:transparent;
+
+    overflow:hidden;
+}
+
+.contact-container{
+    position:relative;
+    z-index:2;
+
+    width:min(1280px,92%);
+
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:.95fr 1.05fr;
+    gap:42px;
+
+    align-items:center;
+}
+
+.contact-tag{
+    display:inline-flex;
+
+    margin-bottom:24px;
+
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,.5);
+}
+
+.contact-left h2{
+    font-size:clamp(46px,4vw,74px);
+    font-weight:700;
+    line-height:.95;
+    letter-spacing:-0.06em;
+
+    margin-bottom:24px;
+}
+
+.contact-left p{
+    font-size:16px;
+    line-height:1.9;
+
+    color:rgba(226,232,240,.62);
+
+    max-width:520px;
+
+    margin-bottom:36px;
+}
+
+.contact-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+}
+
+.contact-action-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    height:52px;
+    padding:0 24px;
+
+    border-radius:10px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:500;
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s cubic-bezier(.16,1,.3,1);
+}
+
+.contact-action-btn:hover{
+    transform:translateY(-4px);
+    filter:brightness(1.15);
+}
+
+.contact-action-btn.btn-whatsapp  { background:#25D366; border-color:#25D366; }
+.contact-action-btn.btn-instagram { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-color:transparent; }
+.contact-action-btn.btn-facebook  { background:#1877F2; border-color:#1877F2; }
+
+.contact-form-wrapper{
+    border-radius:18px;
+
+    background:linear-gradient(180deg,
+    rgba(255,255,255,.04),
+    rgba(59,130,246,.03));
+
+    border:1px solid rgba(96,165,250,.10);
+
+    backdrop-filter:blur(24px);
+
+    padding:38px;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.form-group label{
+    font-size:13px;
+    font-weight:500;
+
+    color:rgba(255,255,255,.72);
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+
+    border:none;
+    outline:none;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(96,165,250,.08);
+
+    padding:18px 20px;
+
+    color:white;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:14px;
+
+    transition:.3s ease;
+}
+
+.form-group textarea{
+    min-height:160px;
+
+    resize:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:rgba(96,165,250,.32);
+
+    background:rgba(59,130,246,.06);
+}
+
+.contact-submit{
+    height:56px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(135deg,#3b82f6,#1d4ed8);
+
+    color:white;
+
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s cubic-bezier(.16,1,.3,1);
+}
+
+.contact-submit:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 14px 50px rgba(59,130,246,.28);
+}
+
+
+@media(max-width:768px){
+    .contact-section{
+        height:auto;
+        min-height:auto;
+        padding:80px 0 60px;
+        overflow:visible;
+    }
+    .contact-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+    .contact-left h2{
+        font-size:clamp(30px,8vw,44px);
+        letter-spacing:-0.04em;
+    }
+    .contact-left p{
+        font-size:15px;
+        margin-bottom:24px;
+    }
+    .contact-actions{
+        gap:12px;
+    }
+    .contact-action-btn{
+        height:46px;
+        padding:0 18px;
+        font-size:13px;
+    }
+    .contact-form-wrapper{
+        padding:24px 18px;
+    }
+    .form-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+    .form-group input,
+    .form-group textarea{
+        padding:14px 16px;
+        font-size:16px; /* évite le zoom iOS */
+    }
+    .form-group textarea{
+        min-height:120px;
+    }
+    .contact-submit{
+        height:50px;
+        font-size:15px;
+    }
+}
+
+/* =========================
+   COOKIE BANNER
+========================= */
+
+.cookie-banner{
+    position:fixed;
+
+    left:50%;
+    bottom:24px;
+
+    transform:translateX(-50%);
+
+    width:min(92%,680px);
+
+    z-index:9999;
+
+    border-radius:16px;
+
+    background:rgba(8,10,14,.88);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(24px);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.45);
+
+    padding:18px 22px;
+
+    animation:cookieReveal .7s cubic-bezier(.16,1,.3,1);
+}
+
+.cookie-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+}
+
+.cookie-content p{
+    margin:0;
+
+    font-size:14px;
+    line-height:1.7;
+
+    color:rgba(255,255,255,.72);
+}
+
+.cookie-content a{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+.cookie-content a:hover{
+    text-decoration:underline;
+}
+
+.cookie-content button{
+    flex-shrink:0;
+
+    border:none;
+    outline:none;
+
+    height:46px;
+    padding:0 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+    135deg,
+    #3b82f6,
+    #2563eb);
+
+    color:white;
+
+    font-size:13px;
+    font-weight:600;
+
+    transition:.35s cubic-bezier(.16,1,.3,1);
+}
+
+.cookie-content button:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 30px rgba(59,130,246,.35);
+}
+
+@keyframes cookieReveal{
+
+    from{
+        opacity:0;
+        transform:
+        translateX(-50%)
+        translateY(24px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateX(-50%)
+        translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    .cookie-content{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cookie-content button{
+        width:100%;
+    }
+
+}
+
+/* Hamburger : caché sur desktop */
+.hamburger{ display:none; }
+
+
+
+.view-icon{
+    position:absolute;
+    left:30px;
+    top:88px;
+
+    width:14px;
+    height:14px;
+
+    object-fit:contain;
+
+    z-index:99;
+
+    opacity:.85;
+}
+
+@media(max-width:768px){
+
+    .view-icon{
+        left:18px;
+        top:18px;
+    }
+
+}
+
+</style>
+
+<body>
+
+<div class="global-dots"></div>
+
+<header>
+
+    <div class="header-logo">
+        <img src="logo1.png" alt="Esquad Auto">
+    </div>
+
+    <nav id="mainNav">
+        <a href="#accueil">Accueil</a>
+        <a href="#prestations">Nos prestations</a>
+        <a href="#realisations">Nos réalisations</a>
+        <a href="#avis">Nos avis</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+
+<section class="hero" id="accueil">
+
+
+
+    <style>
+    /* ---- Conteneur global du player ---- */
+    #cdPlayer {
+        position: absolute;
+        top: 96px;
+        right: 32px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        user-select: none;
+        filter: drop-shadow(0 20px 40px rgba(0,0,0,.6));
+    }
+
+    /* ---- Disque complet ---- */
+    #cdDiscWrap {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        z-index: 3;
+    }
+
+    #cdDisc {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #1a1a1a;
+        box-shadow:
+            0 6px 24px rgba(0,0,0,.8),
+            inset 0 0 0 1px rgba(255,255,255,.07);
+        transform: rotate(0deg);
+        cursor: pointer;
+    }
+
+    #cdDisc.spinning {
+        animation: cdSpin 3s linear infinite;
+    }
+
+    #cdDisc.paused {
+        animation: cdSpin 3s linear infinite;
+        animation-play-state: paused;
+    }
+
+    @keyframes cdSpin {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+    }
+
+    /* Fond du CD */
+    #cdDiscInner {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background-image: url('cd.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Reflet irisé */
+    #cdReflet {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: conic-gradient(
+            rgba(255,255,255,.0) 0deg,
+            rgba(255,200,80,.22) 55deg,
+            rgba(100,200,255,.18) 120deg,
+            rgba(200,100,255,.14) 185deg,
+            rgba(80,255,160,.12) 250deg,
+            rgba(255,255,255,.06) 310deg,
+            rgba(255,255,255,.0) 360deg
+        );
+        mix-blend-mode: screen;
+        pointer-events: none;
+    }
+
+    /* Trou central */
+    #cdDiscHole {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #0a0a0a;
+        border: 1.5px solid rgba(255,255,255,.15);
+        z-index: 4;
+        box-shadow: 0 0 8px rgba(0,0,0,.9);
+    }
+
+    /* Overlay sombre au hover */
+    /* Boutons play/pause - hors du disque, toujours droits */
+    #cdControls {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,.25);
+        opacity: 0;
+        transition: opacity .2s ease;
+        z-index: 10;
+        pointer-events: none;
+    }
+    #cdDiscWrap:hover #cdControls,
+    #cdDiscWrap.idle  #cdControls {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    
+
+    #cdPlay, #cdPause {
+        background: rgba(0,0,0,.6);
+        border: 2px solid rgba(255,255,255,.45);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: white;
+        backdrop-filter: blur(6px);
+        transition: background .2s ease, transform .2s ease;
+    }
+
+    #cdPlay:hover, #cdPause:hover {
+        background: rgba(0,0,0,.85);
+        transform: scale(1.1);
+    }
+
+    #cdPlay svg, #cdPause svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    @media (max-width: 768px) {
+        #cdPlayer   { top: 16px; right: 14px; }
+        #cdDiscWrap { width: 60px; height: 60px; }
+        #cdDisc     { width: 60px; height: 60px; }
+        #cdPlay, #cdPause { width: 24px; height: 24px; }
+        #cdPlay svg, #cdPause svg { width: 9px; height: 9px; }
+    }
+    </style>
+
+
+
+    <img src="CODE.png" alt="" class="view-icon">
+    
+    <div class="hero-image"></div>
+
+    <div class="grid-overlay" style="display:none"></div>
+
+    <div class="noise"></div>
+
+    <div class="content">
+
+        <div class="hero-logo-glitch">
+            <img src="logo.png" alt="Esquad Auto" class="hero-logo glitch-base">
+            <img src="logo.png" alt="" class="hero-logo glitch-red" aria-hidden="true">
+            <img src="logo.png" alt="" class="hero-logo glitch-blue" aria-hidden="true">
+        </div>
+
+        <div class="hero-text">
+            <div class="hero-subtitle">
+                Film solaire • Covering • Rénovation optique
+            </div>
+
+            <div class="hero-title">
+    Le meilleur <span id="typing"></span><span class="typing-cursor">|</span>
+</div>
+
+            <div class="hero-description">
+                Une finition automobile moderne pensée pour le confort,
+                l'esthétique et la protection thermique.
+            </div>
+
+            <div class="hero-smalltext">
+                Pose de film solaire automobile haut de gamme,
+                covering partiel, rénovation et déjaunissement de phares,
+                traitement et nettoyage de vitres.
+                Une approche premium inspirée de l'univers automobile moderne.
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a href="#realisations" class="btn btn-primary">
+    Découvrir
+</a>
+
+            <a href="#prestations" class="btn btn-secondary">
+                Nos prestations
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     PRESTATIONS
+========================= -->
+
+<section class="services-section" id="prestations">
+
+    <div class="services-background"></div>
+
+    <div class="services-overlay"></div>
+
+    <div class="services-container">
+
+        <div class="services-heading">
+
+            <h2>
+                Une expertise automobile moderne
+pensée pour l'esthétique et
+
+<span id="servicesTyping"></span><span class="typing-cursor">|</span>
+            </h2>
+        </div>
+
+        <div class="services-grid">
+
+            <!-- Carte 1 -->
+            <div class="service-card">
+                <img src="auto2.png" alt="Film solaire premium">
+
+                <div class="service-content">
+                    <h3>Film solaire premium</h3>
+
+                    <p>
+                        Protection thermique avancée, réduction de chaleur
+                        et finition haut de gamme pour votre véhicule.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="service-card">
+                <img src="auto1.png" alt="Rénovation de phares">
+
+                <div class="service-content">
+                    <h3>Covering partiel</h3>
+
+                    <p>
+                        Modernisez l'apparence de votre véhicule avec
+                        une finition élégante et sportive.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="service-card">
+                <img src="auto4.png" alt="Rénovation de phares">
+
+                <div class="service-content">
+                    <h3>Rénovation de phares</h3>
+
+                    <p>
+                        Déjaunissement et restauration de l'éclairage pour
+                        retrouver un rendu propre et moderne.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FILM SOLAIRE
+========================= -->
+
+<section class="detail-section" id="film-solaire">
+
+
+    <div class="detail-container reverse-layout">
+
+        <div class="covering-slider reveal-left">
+
+            <button class="gallery-btn film-prev">&#8249;</button>
+
+            <div class="detail-image">
+                <div class="cover-track">
+                    <img src="section3img/img1.png" class="film-slide active-film" alt="Film solaire premium">
+                    <img src="section3img/img2.png" class="film-slide" alt="Film solaire premium">
+                    <img src="section3img/img3.png" class="film-slide" alt="Film solaire premium">
+                    <img src="section3img/img4.png" class="film-slide" alt="Film solaire premium">
+                    <img src="section3img/img5.png" class="film-slide" alt="Film solaire premium">
+                </div>
+            </div>
+
+            <button class="gallery-btn film-next">&#8250;</button>
+
+        </div>
+
+        <div class="detail-content reveal-right">
+
+            <h2>
+                Une protection<br>
+                thermique haut de<br> 
+                gamme pensée<br> 
+                pour un confort<br> 
+                quotidien
+            </h2>
+
+            <p>
+                Nous utilisons le film solaire CharCOAL de chez HEXIS.
+                Un film thermoformable destiné à une pose intérieure,
+                spécialement développé pour les véhicules haut de gamme
+                et les 4×4.
+            </p>
+
+            <p>
+                Il offre un effet discret et élégant et présente
+                un revêtement anti-rayures et anti-UV rejetant
+                l'énergie solaire contribuant à protéger les
+                garnitures et cuirs contre le vieillissement.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     COVERING
+========================= -->
+
+<section class="detail-section dark-section" id="covering">
+
+
+    <div class="detail-container">
+
+        <div class="covering-slider reveal-left">
+
+            <button class="gallery-btn cover-prev">&#8249;</button>
+
+            <div class="detail-image">
+                <div class="cover-track">
+                    <img src="section4img/img1.png" class="cover-slide active-cover" alt="">
+                </div>
+            </div>
+
+            <button class="gallery-btn cover-next">&#8250;</button>
+
+        </div>
+
+        <div class="detail-content reveal-right">
+
+            <h2>
+                Donnez une identité<br>
+                plus sportive et<br>
+                plus moderne<br>
+                à votre véhicule<br>
+            </h2>
+
+            <p>
+                Le covering partiel permet de transformer certains
+                éléments de votre véhicule avec une finition précise,
+                élégante et premium.
+            </p>
+
+            <p>
+                Toit noir brillant, rétroviseurs, bandes décoratives
+                ou éléments spécifiques : chaque détail est pensé pour
+                renforcer l'apparence automobile moderne.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     PHARES
+========================= -->
+
+<section class="detail-section" id="phares">
+
+    <div class="detail-container reverse-layout">
+
+        <div class="covering-slider reveal-left">
+
+            <button class="gallery-btn phare-prev">&#8249;</button>
+
+            <div class="detail-image">
+                <div class="cover-track">
+                    <img src="section5img/img1.png" class="phare-slide active-phare" alt="Rénovation phares">
+                    <img src="section5img/img2.png" class="phare-slide" alt="Rénovation phares">
+                    <img src="section5img/img3.png" class="phare-slide" alt="Rénovation phares">
+
+                </div>
+            </div>
+
+            <button class="gallery-btn phare-next">&#8250;</button>
+
+        </div>
+
+        <div class="detail-content reveal-right">
+
+            <h2>
+                Nettoyez<br> 
+                Assombrissez<br> 
+                Affirmez votre style
+            </h2>
+
+            <p>
+                Le déjaunissement de phares améliore l'apparence
+                du véhicule tout en optimisant la visibilité
+                et l'éclairage nocturne.
+            </p>
+
+            <p>
+                Une rénovation professionnelle permettant de retrouver
+                une finition plus nette et plus esthétique sans avoir
+                à remplacer vos optiques.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     GALERIE
+========================= -->
+
+<section class="gallery-section" id="realisations">
+
+    <div class="gallery-container">
+
+        <div class="gallery-heading reveal-right">
+
+            <h2>
+                Découvrez
+<span id="galleryTyping"></span><span class="typing-cursor">|</span>
+            </h2>
+
+        </div>
+
+        <div class="gallery-slider reveal-left">
+
+            <button class="gallery-btn prev-btn">&#8249;</button>
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide active-slide">
+                    <img src="réalisations/img1.png" alt="Réalisation automobile 1">
+                </div>
+
+                <div class="gallery-slide">
+                    <img src="réalisations/img2.png" alt="Réalisation automobile 2">
+                </div>
+
+                <div class="gallery-slide">
+                    <img src="réalisations/img3.png" alt="Réalisation automobile 3">
+                </div>
+
+                <button class="fullscreen-btn" id="fullscreenBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 3H3v5"/>
+                        <path d="M16 3h5v5"/>
+                        <path d="M21 16v5h-5"/>
+                        <path d="M3 16v5h5"/>
+                    </svg>
+                </button>
+
+            </div>
+
+            <button class="gallery-btn next-btn">&#8250;</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AVIS
+========================= -->
+
+<section class="avis-section" id="avis">
+
+    <div class="avis-dots" style="display:none"></div>
+
+    <div class="avis-container">
+
+        <div class="avis-heading reveal-right">
+            <span class="avis-label">Avis Google</span>
+            <h2>Ce que disent nos clients</h2>
+            <div class="avis-global">
+                <div class="avis-stars-big">★★★★★</div>
+                <div class="avis-global-info">
+                    <span class="avis-note">5.0</span>
+                    <a href="https://www.google.com/maps/place/EsquadAuto/@14.6061332,-61.0059039,17z" target="_blank" class="avis-link">Voir sur Google Maps ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="avis-carousel-wrapper reveal-left">
+            <div class="avis-track" id="avisTrack">
+
+                <!-- Cartes originales -->
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">J</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Jean-Marc F.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Excellent travail sur mon véhicule. Le film solaire est parfaitement posé, la finition est impeccable. Je recommande vivement Esquad Auto ! »</p>
+                    <span class="avis-card-date">Il y a 2 semaines</span>
+                </div>
+
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">S</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Stéphanie M.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Très satisfaite du covering partiel sur mon toit. Rendu super propre et sportif. L'équipe est professionnelle et à l'écoute. »</p>
+                    <span class="avis-card-date">Il y a 1 mois</span>
+                </div>
+
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">K</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Kevin D.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Rénovation de phares top ! Mes optiques sont comme neuves. Tarif raisonnable et travail soigné. Je reviendrai pour le film solaire. »</p>
+                    <span class="avis-card-date">Il y a 3 semaines</span>
+                </div>
+
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">L</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Laura B.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Prestation haut de gamme, résultat bluffant. Mon SUV a été transformé avec le toit noir mat. Merci à toute l'équipe Esquad Auto ! »</p>
+                    <span class="avis-card-date">Il y a 2 mois</span>
+                </div>
+
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">T</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Thomas R.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Film HEXIS CharCOAL posé sur ma BMW. Qualité irréprochable, chaleur réduite de manière significative dans l'habitacle. »</p>
+                    <span class="avis-card-date">Il y a 1 mois</span>
+                </div>
+
+                <!-- Doublons pour la boucle infinie -->
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">J</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Jean-Marc F.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Excellent travail sur mon véhicule. Le film solaire est parfaitement posé, la finition est impeccable. Je recommande vivement Esquad Auto ! »</p>
+                    <span class="avis-card-date">Il y a 2 semaines</span>
+                </div>
+
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">S</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Stéphanie M.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Très satisfaite du covering partiel sur mon toit. Rendu super propre et sportif. L'équipe est professionnelle et à l'écoute. »</p>
+                    <span class="avis-card-date">Il y a 1 mois</span>
+                </div>
+
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">K</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Kevin D.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Rénovation de phares top ! Mes optiques sont comme neuves. Tarif raisonnable et travail soigné. Je reviendrai pour le film solaire. »</p>
+                    <span class="avis-card-date">Il y a 3 semaines</span>
+                </div>
+
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">L</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Laura B.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Prestation haut de gamme, résultat bluffant. Mon SUV a été transformé avec le toit noir mat. Merci à toute l'équipe Esquad Auto ! »</p>
+                    <span class="avis-card-date">Il y a 2 mois</span>
+                </div>
+
+                <div class="avis-card">
+                    <div class="avis-card-header">
+                        <div class="avis-avatar">T</div>
+                        <div class="avis-card-info">
+                            <div class="avis-card-name">Thomas R.</div>
+                            <div class="avis-card-stars">★★★★★</div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png" class="avis-google-icon" alt="Google">
+                    </div>
+                    <p class="avis-card-text">« Film HEXIS CharCOAL posé sur ma BMW. Qualité irréprochable, chaleur réduite de manière significative dans l'habitacle. »</p>
+                    <span class="avis-card-date">Il y a 1 mois</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FAQ SECTION
+========================= -->
+
+<section class="faq-section" id="faq">
+
+
+    <div class="faq-container">
+
+        <div class="faq-heading">
+            <h2>Les questions<br>les plus fréquentes</h2>
+        </div>
+
+        <div class="faq-list" id="faqList">
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Que dit la loi au sujet des vitres teintées ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Selon les dispositions de l'article R316-3 du Code de la route, le pare-brise et les vitres latérales avant d'un véhicule doivent offrir une transparence suffisante (au moins 70&nbsp;% de transmission lumineuse), sans déformer ni altérer la perception des objets et des couleurs. Toute intervention qui compromet la sécurité ou la transparence de ces vitres est interdite.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Il y a-t-il une dérogation pour les DROM ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Non, il n'existe aucune dérogation spécifique aux DROM concernant le pourcentage de transmission lumineuse. La réglementation s'applique uniformément sur tout le territoire national, y compris en Martinique. Néanmoins, le climat tropical (fort ensoleillement, températures élevées, intensité des UV) explique cette volonté populaire, bien que sanctionnable.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Puis-je teinter les vitres latérales arrière autant que je veux ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Oui, la teinte des vitres latérales arrière est libre. Seul le pare-brise et les vitres latérales avant doivent offrir une transparence suffisante (au moins 70&nbsp;% de transmission lumineuse).</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Le bandeau pare-brise est-il autorisé ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Oui, le bandeau est autorisé uniquement sur la partie haute du pare-brise. Il doit être transparent ou semi-transparent (fumé, mais pas opaque), et ne doit pas réduire la transmission de lumière visible (TLV) sous les 70&nbsp;% dans le champ de vision direct du conducteur.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Quel est le tarif pour le teintage de deux vitres ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Le marché en Martinique indique un tarif variant entre <strong>80€ et 120€ TTC</strong> pour 2 vitres teintées. Nous comptons parmi les moins chers. Contactez-nous pour une estimation personnalisée.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Quel est le tarif pour un teintage complet (5 vitres) ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Le marché en Martinique indique un tarif variant entre <strong>230€ et 300€ TTC</strong> pour les 5 vitres teintées. Nous sommes largement en dessous du marché. Contactez-nous pour une estimation personnalisée.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Quelle est la durée de la pose ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Chez Esquad Auto Expert, le temps de pose pour un teintage intégral (5 vitres) nécessite entre <strong>45 minutes et 1 heure</strong>, selon le type de véhicule.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Quel type de film utilisons-nous ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Nous utilisons le film solaire <strong>CharCOAL de chez HEXIS</strong>. Un film thermoformable destiné à une pose intérieure, spécialement développé pour les véhicules haut de gamme et les 4×4. Il offre un effet discret et élégant, avec revêtement anti-rayures et anti-UV rejetant l'énergie solaire, protégeant garnitures et cuirs contre le vieillissement.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Des consignes pour l'entretien et le séchage ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Après la prestation : ne pas baisser les vitres teintées durant <strong>~48h</strong>. Attendre <strong>~7 jours</strong> avant nettoyage. Utiliser microfibre + eau savonneuse uniquement. Le séchage complet intervient en 1 à 2 semaines.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Proposons-nous une garantie ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Oui, sous réserve du respect des consignes données. Contactez-nous pour plus d'informations sur les conditions de garantie.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Comment nous contacter / prendre rendez-vous ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Contactez-nous par téléphone au <strong>+596 696 29 42 57</strong> ou via WhatsApp. Transmettez-nous votre identité, vos disponibilités, le véhicule concerné (marque, modèle, année) et la teinte souhaitée. Nous vous répondrons dans les meilleurs délais.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Où sommes-nous situés ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Nous sommes situés au <strong>69 Rue Emmanuel Courant, Le Lamentin 97232, Martinique</strong>. Des interventions à domicile sont également possibles.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Quels sont nos horaires ?</span>
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Nous sommes ouverts <strong>du Lundi au Samedi de 9h à 19h</strong>.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-dots"></div>
+
+    <div class="contact-container">
+
+        <div class="contact-left reveal-left">
+
+            <h2>
+                Parlons de votre véhicule
+            </h2>
+
+            <p>
+                Contactez-nous pour obtenir un devis,
+                des informations complémentaires ou prendre rendez-vous.
+            </p>
+
+            <div class="contact-actions">
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/596696294257" target="_blank" rel="noopener noreferrer" class="contact-action-btn btn-whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.523 5.855L.057 23.97l6.255-1.439A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.572 9.572 0 01-4.879-1.333l-.35-.208-3.612.831.887-3.513-.228-.361A9.554 9.554 0 012.4 12C2.4 6.698 6.698 2.4 12 2.4S21.6 6.698 21.6 12 17.302 21.6 12 21.6z"/></svg>
+                    WhatsApp
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/esquadauto_" target="_blank" rel="noopener noreferrer" class="contact-action-btn btn-instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    Instagram
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/people/Esquad-Auto-Martinique/61551604573296" target="_blank" rel="noopener noreferrer" class="contact-action-btn btn-facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+                    Facebook
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="contact-form-wrapper reveal-right">
+
+<form 
+    class="contact-form"
+    name="contact"
+    method="POST"
+    data-netlify="true"
+>
+
+    <!-- Obligatoire pour Netlify -->
+    <input type="hidden" name="form-name" value="contact">
+
+    <div class="form-grid">
+
+        <div class="form-group">
+            <label>Nom</label>
+            <input 
+                type="text" 
+                name="nom"
+                placeholder="Votre nom"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label>Téléphone</label>
+            <input 
+                type="text" 
+                name="telephone"
+                placeholder="Votre numéro"
+                required
+            >
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input 
+            type="email" 
+            name="email"
+            placeholder="Votre adresse email"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+        <label>Message</label>
+        <textarea 
+            name="message"
+            placeholder="Décrivez votre projet automobile..."
+            required
+        ></textarea>
+    </div>
+
+    <button type="submit" class="contact-submit">
+        Envoyer la demande
+    </button>
+
+</form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+.site-footer{
+    position:relative;
+    background:rgba(6,8,12,.85);
+    border-top:1px solid rgba(255,255,255,.07);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    padding:64px 0 0;
+    color:rgba(255,255,255,.6);
+    font-size:14px;
+}
+
+.footer-container{
+    width:min(1280px,92%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:48px;
+    padding-bottom:52px;
+}
+
+/* Colonne logo */
+.footer-brand img{
+    width:80px;
+    height:auto;
+    object-fit:contain;
+    margin-bottom:16px;
+    filter:drop-shadow(0 4px 14px rgba(0,0,0,.4));
+}
+
+.footer-brand p{
+    font-size:13.5px;
+    line-height:1.75;
+    color:rgba(255,255,255,.48);
+    max-width:240px;
+}
+
+.footer-socials{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+}
+
+.footer-social-btn{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:.3s cubic-bezier(.16,1,.3,1);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.footer-social-btn:hover{
+    transform:translateY(-3px);
+    filter:brightness(1.15);
+}
+
+.footer-social-btn.wa { background:#25D366; border-color:#25D366; }
+.footer-social-btn.ig { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-color:transparent; }
+.footer-social-btn.fb { background:#1877F2; border-color:#1877F2; }
+.footer-social-btn.gm { background:#EA4335; border-color:#EA4335; }
+
+/* Colonnes */
+.footer-col h4{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.92);
+    margin-bottom:20px;
+}
+
+.footer-col ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+}
+
+.footer-col ul li a{
+    color:rgba(255,255,255,.5);
+    text-decoration:none;
+    font-size:14px;
+    transition:.25s ease;
+}
+
+.footer-col ul li a:hover{
+    color:rgba(255,255,255,.9);
+}
+
+/* Coordonnées */
+.footer-info-item{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:14px;
+    color:rgba(255,255,255,.5);
+    font-size:14px;
+    line-height:1.6;
+}
+
+.footer-info-item svg{
+    flex-shrink:0;
+    margin-top:2px;
+    color:rgba(255,255,255,.3);
+}
+
+/* Horaires */
+.footer-hours-row{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    font-size:13.5px;
+    color:rgba(255,255,255,.5);
+    margin-bottom:10px;
+}
+
+.footer-hours-row span:last-child{
+    color:rgba(255,255,255,.75);
+    font-weight:500;
+}
+
+/* Barre du bas */
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.06);
+    padding:20px 0;
+}
+
+.footer-bottom-inner{
+    width:min(1280px,92%);
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.footer-bottom-inner p{
+    font-size:12.5px;
+    color:rgba(255,255,255,.3);
+}
+
+.footer-bottom-inner a{
+    font-size:12.5px;
+    color:rgba(255,255,255,.35);
+    text-decoration:none;
+    transition:.25s ease;
+}
+
+.footer-bottom-inner a:hover{
+    color:rgba(255,255,255,.75);
+}
+
+@media(max-width:900px){
+    .footer-container{
+        grid-template-columns:1fr 1fr;
+        gap:36px;
+    }
+}
+
+@media(max-width:560px){
+    .footer-container{
+        grid-template-columns:1fr;
+        gap:32px;
+    }
+    .footer-bottom-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+}
+</style>
+
+<!-- =========================
+     COOKIE NOTICE
+========================= -->
+
+<div class="cookie-banner" id="cookieBanner">
+
+    <div class="cookie-content">
+
+        <p>
+            Ce site utilise des cookies techniques
+            et certains services tiers
+            afin d’assurer son bon fonctionnement
+            et améliorer l’expérience utilisateur.
+
+            <a href="politique-de-confidentialité.html">
+                En savoir plus
+            </a>
+        </p>
+
+        <button id="cookieAccept">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <!-- Colonne 1 : Brand -->
+        <div class="footer-brand">
+            <img src="logo.png" alt="Esquad Auto Expert">
+            <p>Spécialiste du teintage de vitres automobiles en Martinique. Qualité, rapidité et prix justes.</p>
+            <div class="footer-socials">
+                <a href="https://wa.me/596696294257" target="_blank" rel="noopener noreferrer" class="footer-social-btn wa" aria-label="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.523 5.855L.057 23.97l6.255-1.439A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.572 9.572 0 01-4.879-1.333l-.35-.208-3.612.831.887-3.513-.228-.361A9.554 9.554 0 012.4 12C2.4 6.698 6.698 2.4 12 2.4S21.6 6.698 21.6 12 17.302 21.6 12 21.6z"/></svg>
+                </a>
+                <a href="https://instagram.com/esquadauto_" target="_blank" rel="noopener noreferrer" class="footer-social-btn ig" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/people/Esquad-Auto-Martinique/61551604573296" target="_blank" rel="noopener noreferrer" class="footer-social-btn fb" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="white" viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.google.com/maps/place/EsquadAuto/@14.6061293,-61.0039727,225m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8c6aa1e81261c8ef:0xacdbe497b90b88fc!8m2!3d14.606128!4d-61.003329!16s%2Fg%2F11y7chmq9_?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-social-btn gm" aria-label="Google Maps">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="white" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Colonne 2 : Navigation -->
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#prestations">Nos prestations</a></li>
+                <li><a href="#realisations">Nos réalisations</a></li>
+                <li><a href="#avis">Nos avis</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Colonne 3 : Coordonnées -->
+        <div class="footer-col">
+            <h4>Coordonnées</h4>
+            <div class="footer-info-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>69 Rue Emmanuel Courant<br>Le Lamentin 97232, Martinique</span>
+            </div>
+            <div class="footer-info-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <span><a href="tel:+596696294257" style="color:inherit;text-decoration:none;">+596 696 29 42 57</a></span>
+            </div>
+            <div class="footer-info-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Interventions à domicile possibles</span>
+            </div>
+        </div>
+
+        <!-- Colonne 4 : Horaires -->
+        <div class="footer-col">
+            <h4>Horaires</h4>
+            <div class="footer-hours-row"><span>Lundi</span><span>9h – 19h</span></div>
+            <div class="footer-hours-row"><span>Mardi</span><span>9h – 19h</span></div>
+            <div class="footer-hours-row"><span>Mercredi</span><span>9h – 19h</span></div>
+            <div class="footer-hours-row"><span>Jeudi</span><span>9h – 19h</span></div>
+            <div class="footer-hours-row"><span>Vendredi</span><span>9h – 19h</span></div>
+            <div class="footer-hours-row"><span>Samedi</span><span>9h – 19h</span></div>
+            <div class="footer-hours-row"><span>Dimanche</span><span style="color:rgba(255,255,255,.3)">Fermé</span></div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+<div class="footer-bottom-inner">
+    <p>© 2025 Esquad Auto Expert — Tous droits réservés</p>
+
+    <div style="margin-left:auto; display:flex; gap:16px;">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+    </div>
+</div>
+    </div>
+
+</footer>
+
+<script>
+
+/* =========================
+   INTERSECTION OBSERVERS
+========================= */
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.services-heading, .service-card').forEach((el) => {
+    observer.observe(el);
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.reveal-left, .reveal-right').forEach((el) => {
+    revealObserver.observe(el);
+});
+
+/* =========================
+   GALLERY SLIDER
+========================= */
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.gallery-slide');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+const fullscreenBtn = document.getElementById('fullscreenBtn');
+const galleryTrack = document.querySelector('.gallery-track');
+
+function showSlide(index) {
+    slides.forEach((slide) => slide.classList.remove('active-slide'));
+    slides[index].classList.add('active-slide');
+}
+
+nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+});
+
+prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+});
+
+fullscreenBtn.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+        galleryTrack.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+});
+
+/* =========================
+   HEADER SCROLL BEHAVIOUR
+========================= */
+
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    header.style.transform = 'translateY(0px)';
+});
+
+/* =========================
+   FILM SOLAIRE SLIDER
+========================= */
+
+const filmSlides = document.querySelectorAll('.film-slide');
+const filmNext  = document.querySelector('.film-next');
+const filmPrev  = document.querySelector('.film-prev');
+let filmIndex = 0;
+
+function showFilm(index) {
+    filmSlides.forEach((slide) => slide.classList.remove('active-film'));
+    filmSlides[index].classList.add('active-film');
+}
+
+filmNext.addEventListener('click', () => {
+    filmIndex = (filmIndex + 1) % filmSlides.length;
+    showFilm(filmIndex);
+});
+
+filmPrev.addEventListener('click', () => {
+    filmIndex = (filmIndex - 1 + filmSlides.length) % filmSlides.length;
+    showFilm(filmIndex);
+});
+
+/* =========================
+   COVERING SLIDER
+========================= */
+
+const coverSlides = document.querySelectorAll('.cover-slide');
+const coverNext   = document.querySelector('.cover-next');
+const coverPrev   = document.querySelector('.cover-prev');
+let coverIndex = 0;
+
+function showCover(index) {
+    coverSlides.forEach((slide) => slide.classList.remove('active-cover'));
+    coverSlides[index].classList.add('active-cover');
+}
+
+coverNext.addEventListener('click', () => {
+    coverIndex = (coverIndex + 1) % coverSlides.length;
+    showCover(coverIndex);
+});
+
+coverPrev.addEventListener('click', () => {
+    coverIndex = (coverIndex - 1 + coverSlides.length) % coverSlides.length;
+    showCover(coverIndex);
+});
+
+/* =========================
+   AVIS CAROUSEL — défilement CSS infini, pause au survol
+========================= */
+// Rien à faire : l'animation est gérée en CSS (avisScroll sur .avis-track)
+
+const phareSlides = document.querySelectorAll('.phare-slide');
+const phareNext   = document.querySelector('.phare-next');
+const pharePrev   = document.querySelector('.phare-prev');
+let phareIndex = 0;
+
+function showPhare(index) {
+    phareSlides.forEach((slide) => slide.classList.remove('active-phare'));
+    phareSlides[index].classList.add('active-phare');
+}
+
+phareNext.addEventListener('click', () => {
+    phareIndex = (phareIndex + 1) % phareSlides.length;
+    showPhare(phareIndex);
+});
+
+pharePrev.addEventListener('click', () => {
+    phareIndex = (phareIndex - 1 + phareSlides.length) % phareSlides.length;
+    showPhare(phareIndex);
+});
+
+</script>
+
+
+</script>
+
+<script>
+/* =========================
+   SCRIPT ANIMATION TEXT
+========================= */
+
+/* ---- Cursor style ---- */
+(function(){
+    const style = document.createElement('style');
+    style.textContent = `
+        .typing-cursor {
+            display: inline-block;
+            font-weight: 300;
+            margin-left: 2px;
+            opacity: 1;
+            vertical-align: baseline;
+            animation: cursorBlink 0.7s step-end infinite;
+        }
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
+})();
+
+function setGlitch(el, val) {
+    el.textContent = val;
+}
+
+const texts = [
+
+"partenaire",
+"prestataire",
+"des tarifs"
+
+];
+
+const typing = document.getElementById("typing");
+
+let textIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function animateText(){
+
+    const currentText = texts[textIndex];
+
+    if(deleting){
+
+        setGlitch(typing, currentText.substring(0, charIndex - 1));
+        charIndex--;
+
+    } else {
+
+        setGlitch(typing, currentText.substring(0, charIndex + 1));
+        charIndex++;
+    }
+
+    let speed = deleting ? 35 : 70;
+
+    if(!deleting && charIndex === currentText.length){
+
+        deleting = true;
+        speed = 3500;
+
+} else if(deleting && charIndex === 0){
+
+    deleting = false;
+
+    textIndex =
+    (textIndex + 1) % texts.length;
+
+    speed = 700
+}
+
+    setTimeout(animateText, speed);
+}
+
+animateText();
+
+
+
+/* =========================
+   SCRIPT ANIMATION TEXT
+========================= */
+
+const servicesTexts = [
+    "l'isolation",
+    "le confort",
+    "l'intimité"
+];
+
+const servicesTyping =
+document.getElementById("servicesTyping");
+
+let servicesIndex = 0;
+let servicesChar = 0;
+let servicesDeleting = false;
+
+function animateServicesText(){
+
+    const current =
+    servicesTexts[servicesIndex];
+
+    if(servicesDeleting){
+
+        setGlitch(servicesTyping, current.substring(0, servicesChar - 1));
+        servicesChar--;
+
+    } else {
+
+        setGlitch(servicesTyping, current.substring(0, servicesChar + 1));
+        servicesChar++;
+    }
+
+    let speed =
+    servicesDeleting ? 40 : 70;
+
+    if(
+        !servicesDeleting &&
+        servicesChar === current.length
+    ){
+
+        servicesDeleting = true;
+        speed = 3500;
+
+    } else if(
+        servicesDeleting &&
+        servicesChar === 0
+    ){
+
+        servicesDeleting = false;
+
+        servicesIndex =
+        (servicesIndex + 1)
+        % servicesTexts.length;
+
+        speed = 700;
+
+    }
+
+    setTimeout(
+        animateServicesText,
+        speed
+    );
+}
+
+animateServicesText();
+
+/* =========================
+   SCRIPT ANIMATION TEXT
+========================= */
+
+const galleryTexts = [
+    "nos réalisations",
+    "notre travail",
+    "notre qualité"
+];
+
+const galleryTyping =
+document.getElementById("galleryTyping");
+
+let galleryIndex = 0;
+let galleryChar = 0;
+let galleryDeleting = false;
+
+function animateGalleryText(){
+
+    const current =
+    galleryTexts[galleryIndex];
+
+    if(galleryDeleting){
+
+        setGlitch(galleryTyping, current.substring(0, galleryChar - 1));
+        galleryChar--;
+
+    } else {
+
+        setGlitch(galleryTyping, current.substring(0, galleryChar + 1));
+        galleryChar++;
+    }
+
+    let speed =
+    galleryDeleting ? 40 : 70;
+
+    if(
+        !galleryDeleting &&
+        galleryChar === current.length
+    ){
+
+        galleryDeleting = true;
+        speed = 3500;
+
+    } else if(
+        galleryDeleting &&
+        galleryChar === 0
+    ){
+
+        galleryDeleting = false;
+
+        galleryIndex =
+        (galleryIndex + 1)
+        % galleryTexts.length;
+
+        speed = 700;
+
+    }
+
+    setTimeout(
+        animateGalleryText,
+        speed
+    );
+}
+
+animateGalleryText();
+
+</script>
+
+<script>
+/* =========================
+   FAQ ACCORDION + REVEAL
+========================= */
+(function(){
+
+    // Reveal au scroll
+    const items = document.querySelectorAll('.faq-item');
+    if('IntersectionObserver' in window){
+        const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry, i) => {
+                if(entry.isIntersecting){
+                    setTimeout(() => {
+                        entry.target.classList.add('faq-visible');
+                    }, Array.from(items).indexOf(entry.target) * 60);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        items.forEach(item => io.observe(item));
+    } else {
+        items.forEach(item => item.classList.add('faq-visible'));
+    }
+
+    // Accordéon
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+            const answer = btn.nextElementSibling;
+
+            // Ferme tous les autres
+            document.querySelectorAll('.faq-question').forEach(other => {
+                if(other !== btn){
+                    other.setAttribute('aria-expanded','false');
+                    other.nextElementSibling.style.maxHeight = '0';
+                }
+            });
+
+            if(isOpen){
+                btn.setAttribute('aria-expanded','false');
+                answer.style.maxHeight = '0';
+            } else {
+                btn.setAttribute('aria-expanded','true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+
+})();
+
+/* =========================
+   COOKIE NOTICE
+========================= */
+
+const cookieBanner =
+document.getElementById("cookieBanner");
+
+const cookieAccept =
+document.getElementById("cookieAccept");
+
+if(localStorage.getItem("cookieAccepted")){
+
+    cookieBanner.style.display = "none";
+
+}
+
+cookieAccept.addEventListener("click", () => {
+
+    localStorage.setItem(
+        "cookieAccepted",
+        "true"
+    );
+
+    cookieBanner.style.display = "none";
+
+});
+
+</script>
+<!-- =========================
+     NAVIGATION FLÈCHE FIXE
+========================= -->
+
+<button id="sectionArrowUp" aria-label="Section précédente">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 15 12 9 18 15"/>
+    </svg>
+</button>
+
+<button id="sectionArrow" aria-label="Section suivante">
+    <svg id="arrowIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+    </svg>
+</button>
+
+<style>
+#sectionArrow,
+#sectionArrowUp {
+    position: fixed;
+    right: 28px;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+    padding: 0;
+
+    cursor: pointer;
+
+    transition: transform .35s cubic-bezier(.16,1,.3,1), opacity .3s ease;
+}
+
+#sectionArrow {
+    opacity: 1;
+    bottom: 38px;
+}
+
+#sectionArrowUp {
+    top: 108px; /* sous le header (78px) + un peu d'espace */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease, transform .35s cubic-bezier(.16,1,.3,1);
+}
+
+#sectionArrowUp.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#sectionArrow:hover {
+    transform: translateY(4px);
+}
+
+#sectionArrowUp:hover {
+    transform: translateY(-4px);
+}
+
+#sectionArrow svg,
+#sectionArrowUp svg {
+    width: 28px;
+    height: 28px;
+    color: rgba(255,255,255,.55);
+    transition: color .3s ease;
+}
+
+#sectionArrow:hover svg,
+#sectionArrowUp:hover svg {
+    color: rgba(255,255,255,.9);
+}
+
+/* Retourner la flèche bas quand on est en bas */
+#sectionArrow.arrow-up svg {
+    transform: rotate(180deg);
+    transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s ease;
+}
+
+/* Rebond bas */
+@keyframes arrowBounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(6px); }
+}
+
+#sectionArrow.arrow-pulse:not(.arrow-up) {
+    animation: arrowBounce 1.6s ease-in-out infinite;
+}
+
+
+@media (max-width: 768px) {
+
+    #sectionArrow,
+    #sectionArrowUp{
+        display:none !important;
+    }
+
+}
+
+</style>
+
+<script>
+/* =========================
+   NAVIGATION FLÈCHE FIXE
+========================= */
+(function() {
+    const sectionIds = [
+        'accueil',
+        'prestations',
+        'film-solaire',
+        'covering',
+        'phares',
+        'realisations',
+        'avis',
+        'faq',
+        'contact'
+    ];
+
+    const btnDown = document.getElementById('sectionArrow');
+    const btnUp   = document.getElementById('sectionArrowUp');
+    const HEADER_H = 78;
+
+    function getCurrentIndex() {
+        const mid = window.scrollY + window.innerHeight / 2;
+        let closest = 0;
+        let minDist = Infinity;
+        sectionIds.forEach((id, i) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const top = el.getBoundingClientRect().top + window.scrollY;
+            const dist = Math.abs(top - mid);
+            if (dist < minDist) { minDist = dist; closest = i; }
+        });
+        return closest;
+    }
+
+    function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const top = el.getBoundingClientRect().top + window.scrollY - HEADER_H;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
+
+    function updateArrows() {
+        const idx = getCurrentIndex();
+        const isFirst = idx === 0;
+        const isLast  = idx >= sectionIds.length - 1;
+
+        // Flèche bas : disparaît sur la dernière section
+        if (isLast) {
+            btnDown.style.opacity = '0';
+            btnDown.style.pointerEvents = 'none';
+        } else {
+            btnDown.style.opacity = '';
+            btnDown.style.pointerEvents = '';
+            btnDown.setAttribute('aria-label', 'Section suivante');
+        }
+
+        // Flèche haut : visible dès qu'on n'est plus sur la première section
+        if (isFirst) {
+            btnUp.classList.remove('visible');
+        } else {
+            btnUp.classList.add('visible');
+        }
+
+        // Rebond sur la première section
+        if (isFirst) {
+            btnDown.classList.add('arrow-pulse');
+        } else {
+            btnDown.classList.remove('arrow-pulse');
+        }
+    }
+
+    // Flèche bas : descend, ou remonte si dernière section
+    btnDown.addEventListener('click', function() {
+        const idx = getCurrentIndex();
+        if (idx < sectionIds.length - 1) {
+            scrollToSection(sectionIds[idx + 1]);
+        }
+    });
+
+    // Flèche haut : remonte section par section
+    btnUp.addEventListener('click', function() {
+        const idx = getCurrentIndex();
+        if (idx > 0) {
+            scrollToSection(sectionIds[idx - 1]);
+        }
+    });
+
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(function() { updateArrows(); ticking = false; });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    updateArrows();
+})();
+</script>
+
+<script>
+/* =========================
+   HAMBURGER MENU MOBILE
+========================= */
+(function(){
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    if(!btn || !nav) return;
+
+    btn.addEventListener('click', function(){
+        const isOpen = nav.classList.toggle('open');
+        btn.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Ferme le menu quand on clique sur un lien
+    nav.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+            nav.classList.remove('open');
+            btn.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    });
+})();
+</script>
+
+<script>
+/* =========================
+   RÉORDONNANCEMENT MOBILE SECTIONS 3-4-5
+   Sur mobile : déplace le h2 avant le covering-slider
+   Résultat : titre > image > texte
+   Les animations reveal fonctionnent normalement.
+========================= */
+(function(){
+    if(window.innerWidth > 768) return;
+
+    ['film-solaire','covering','phares'].forEach(function(id){
+        var section   = document.getElementById(id);
+        if(!section) return;
+        var container = section.querySelector('.detail-container');
+        var h2        = section.querySelector('.detail-content h2');
+        var slider    = section.querySelector('.covering-slider');
+        if(!container || !h2 || !slider) return;
+        // Ajoute les classes reveal pour que le JS d'observation l'anime
+        h2.classList.add('reveal-left');
+        container.insertBefore(h2, slider);
+        // L'observer du reveal ne re-scanne pas les nouveaux éléments,
+        // on l'observe manuellement
+        revealObserver.observe(h2);
+    });
+})();
+</script>
+
+
+<!-- ===== LECTEUR CD (dans body, absolute par rapport au document) ===== -->
+<div id="cdPlayer">
+    <audio id="heroAudio" src="music.mp3" loop preload="auto"></audio>
+    <div id="cdDiscWrap">
+        <div id="cdDisc">
+            <div id="cdDiscInner"></div>
+            <div id="cdDiscHole"></div>
+            <div id="cdReflet"></div>
+        </div>
+        <div id="cdControls">
+            <button id="cdPlay" aria-label="Play">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
+            <button id="cdPause" aria-label="Pause" style="display:none">
+                <svg viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>
+            </button>
+        </div>
+    </div>
+</div>
+    <script>
+    (function(){
+        const audio    = document.getElementById('heroAudio');
+        const disc     = document.getElementById('cdDisc');
+        const wrap     = document.getElementById('cdDiscWrap');
+        const btnPlay  = document.getElementById('cdPlay');
+        const btnPause = document.getElementById('cdPause');
+
+        // idle = état initial, play visible
+        wrap.classList.add('idle');
+
+        function startPlay(){
+            audio.play().catch(()=>{});
+            disc.classList.add('spinning');
+            disc.classList.remove('paused');
+            wrap.classList.remove('idle');
+            btnPlay.style.display  = 'none';
+            btnPause.style.display = 'flex';
+        }
+        function pausePlay(){
+            audio.pause();
+            disc.classList.add('paused');
+            wrap.classList.add('idle');
+            btnPlay.style.display  = 'flex';
+            btnPause.style.display = 'none';
+        }
+
+        btnPlay.addEventListener('click', function(e){
+            e.stopPropagation();
+            startPlay();
+        });
+        btnPause.addEventListener('click', function(e){
+            e.stopPropagation();
+            pausePlay();
+        });
+
+        // Clic uniquement sur les boutons play/pause (pas sur le disque)
+        // Le drag est géré séparément et stoppe la propagation
+
+        // ---- DRAG desktop uniquement ----
+        const player = document.getElementById('cdPlayer');
+        if (window.innerWidth > 768) {
+            let dragging = false;
+            let offsetX = 0, offsetY = 0;
+
+            player.style.cursor = 'grab';
+
+            player.addEventListener('mousedown', function(e) {
+                if (e.target.closest('#cdPlay') || e.target.closest('#cdPause')) return;
+                dragging = true;
+                player.style.cursor = 'grabbing';
+
+                // Passe en fixed pour que le drag ne suive pas le scroll
+                const rect = player.getBoundingClientRect();
+                player.style.position = 'fixed';
+                player.style.right    = 'auto';
+                player.style.bottom   = 'auto';
+                player.style.left     = rect.left + 'px';
+                player.style.top      = rect.top  + 'px';
+
+                offsetX = e.clientX - rect.left;
+                offsetY = e.clientY - rect.top;
+
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', function(e) {
+                if (!dragging) return;
+                player.style.left = (e.clientX - offsetX) + 'px';
+                player.style.top  = (e.clientY - offsetY) + 'px';
+            });
+
+            document.addEventListener('mouseup', function() {
+                if (!dragging) return;
+                dragging = false;
+                player.style.cursor = 'grab';
+
+                // Reconvertit fixed -> absolute par rapport au body (ajoute le scroll)
+                const rect = player.getBoundingClientRect();
+                player.style.position = 'absolute';
+                player.style.left     = (rect.left + window.scrollX) + 'px';
+                player.style.top      = (rect.top  + window.scrollY) + 'px';
+            });
+        }
+    })();
+    </script>
+
+<script>
+/* =========================
+   GLITCH LOGO HERO
+========================= */
+(function(){
+    const glitchRed  = document.querySelector('.glitch-red');
+    const glitchBlue = document.querySelector('.glitch-blue');
+    const glitchWrap = document.querySelector('.hero-logo-glitch');
+    if(!glitchRed || !glitchBlue || !glitchWrap) return;
+
+    function randomGlitch(){
+        const rx = (Math.random() - 0.5) * 36;
+        const ry = (Math.random() - 0.5) * 16;
+        const bx = (Math.random() - 0.5) * 36;
+        const by = (Math.random() - 0.5) * 16;
+
+        const top1    = Math.random() * 80;
+        const bottom1 = Math.random() * 80;
+        const top2    = Math.random() * 80;
+        const bottom2 = Math.random() * 80;
+
+        glitchRed.style.transform  = `translate(${rx}px,${ry}px)`;
+        glitchBlue.style.transform = `translate(${bx}px,${by}px)`;
+
+        glitchRed.style.clipPath  = `inset(${top1}% 0 ${bottom1}% 0)`;
+        glitchBlue.style.clipPath = `inset(${top2}% 0 ${bottom2}% 0)`;
+
+        glitchRed.style.filter  = 'drop-shadow(-6px 0 red)';
+        glitchBlue.style.filter = 'drop-shadow(6px 0 cyan)';
+
+        glitchWrap.style.transform = `translate(${(Math.random()-.5)*3}px,${(Math.random()-.5)*3}px)`;
+
+        glitchRed.style.opacity  = Math.random() > 0.7 ? '0' : '0.75';
+        glitchBlue.style.opacity = Math.random() > 0.7 ? '0' : '0.75';
+
+        if(Math.random() > 0.82){
+            glitchRed.style.clipPath  = 'none';
+            glitchBlue.style.clipPath = 'none';
+            glitchRed.style.transform  = 'translate(0)';
+            glitchBlue.style.transform = 'translate(0)';
+            glitchWrap.style.transform = 'translate(0)';
+        }
+
+        setTimeout(randomGlitch, 50 + Math.random() * 110);
+    }
+
+    randomGlitch();
+})();
+</script>
+</body>
+</html>
