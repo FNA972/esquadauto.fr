@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Politique de confidentialité – Esquad Auto Expert</title>
+
+  <meta name="description" content="Politique de confidentialité du site Esquad Auto Expert." />
+
+  <style>
+
+    :root{
+      --muted:#9fb0c3;
+      --text:#e8eef7;
+      --accent:#3aa6ff;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html,
+    body{
+      margin:0;
+      padding:0;
+
+      background:#000;
+      color:var(--text);
+
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .wrap{
+      max-width:980px;
+
+      margin:48px auto;
+      padding:0 20px;
+
+      background:rgba(0,0,0,.65);
+
+      border-radius:12px;
+
+      opacity:0;
+      transform:translateY(40px);
+
+      transition:all .8s ease-out;
+    }
+
+    .wrap.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+
+      margin-bottom:24px;
+    }
+
+    .logo img{
+      width:100px;
+      height:100px;
+
+      border-radius:12px;
+
+      display:block;
+
+      cursor:pointer;
+
+      transition:
+      transform .3s ease,
+      box-shadow .3s ease;
+    }
+
+    .logo img:hover{
+      transform:scale(1.08);
+
+      box-shadow:
+      0 4px 12px rgba(0,0,0,.5);
+    }
+
+    .logo img:active{
+      transform:scale(.96);
+    }
+
+    h1{
+      font-size:clamp(2.2rem,3vw,3rem);
+      margin:0;
+    }
+
+    h2{
+      font-size:1.6rem;
+
+      margin:28px 0 14px 0;
+
+      opacity:0;
+      transform:translateY(30px);
+
+      transition:all .6s ease-out;
+    }
+
+    h2.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    section p,
+    section li{
+      opacity:0;
+      transform:translateY(20px);
+
+      transition:all .6s ease-out;
+    }
+
+    section p.visible,
+    section li.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    ul{
+      padding-left:20px;
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    footer{
+      margin:28px 0 60px;
+
+      color:var(--muted);
+      font-size:.95rem;
+
+      opacity:0;
+      transform:translateY(20px);
+
+      transition:all .6s ease-out;
+    }
+
+    footer.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media(max-width:780px){
+
+      header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+    }
+
+  </style>
+
+  <script>
+
+    // Bloquer le clic droit
+    document.addEventListener('contextmenu', function(e){
+      e.preventDefault();
+    });
+
+    // Animation apparition
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+          }
+
+        });
+
+      }, { threshold:0.1 });
+
+      document.querySelectorAll(
+        '.wrap, h2, section p, section li, footer'
+      ).forEach(el => {
+        observer.observe(el);
+      });
+
+    });
+
+  </script>
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <header>
+
+    <div class="logo">
+      <a href="https://esquadauto.fr">
+        <img src="logo4k.png" alt="Logo Esquad Auto Expert" />
+      </a>
+    </div>
+
+    <div>
+      <h1>Politique de confidentialité</h1>
+
+      <div class="muted">
+        Site :
+        <strong>
+          <a href="https://esquadauto.fr">
+            esquadauto.fr
+          </a>
+        </strong>
+        <br>
+
+        Éditeur :
+        <strong>
+          Esquad Auto Expert
+        </strong>
+      </div>
+    </div>
+
+  </header>
+
+  <section>
+
+    <h2>1. Responsable du traitement</h2>
+
+    <p>
+      Les données personnelles collectées sur le site
+      <strong>Esquad Auto Expert</strong>
+      sont traitées par :
+    </p>
+
+    <p>
+      <strong>Esquad Auto Expert</strong><br>
+      Entrepreneur individuel – Anthony CORALIE<br>
+      69 Rue Emmanuel Courant, 97232 Le Lamentin, Martinique<br>
+      Email :
+      <a href="mailto:esquad.auto97@gmail.com">
+        esquad.auto97@gmail.com
+      </a><br>
+      Téléphone :
+      +596 696 29 42 57
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>2. Données collectées</h2>
+
+    <p>
+      Lors de l’utilisation du site ou des prises de contact,
+      certaines données peuvent être collectées :
+    </p>
+
+    <ul>
+      <li>Nom et prénom</li>
+      <li>Numéro de téléphone</li>
+      <li>Adresse e-mail</li>
+      <li>Message transmis via le formulaire de contact</li>
+      <li>Données techniques de navigation (adresse IP, navigateur, appareil)</li>
+    </ul>
+
+    <p>
+      Les formulaires de contact du site utilisent
+      le service Netlify Forms permettant
+      la réception sécurisée des demandes envoyées
+      par les utilisateurs.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>3. Finalités du traitement</h2>
+
+    <p>
+      Les données collectées sont utilisées uniquement pour :
+    </p>
+
+    <ul>
+      <li>Répondre aux demandes de contact</li>
+      <li>Établir un devis ou organiser une prestation</li>
+      <li>Assurer le suivi client</li>
+      <li>Améliorer l’expérience utilisateur du site</li>
+      <li>Garantir la sécurité et le bon fonctionnement du site</li>
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h2>4. Base légale</h2>
+
+    <p>
+      Les traitements de données reposent :
+    </p>
+
+    <ul>
+      <li>Sur le consentement de l’utilisateur lorsqu’il contacte Esquad Auto Expert</li>
+      <li>Sur l’exécution de mesures précontractuelles ou contractuelles</li>
+      <li>Sur l’intérêt légitime lié à la sécurité et au fonctionnement du site</li>
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h2>5. Durée de conservation</h2>
+
+    <p>
+      Les données personnelles sont conservées uniquement
+      pendant la durée nécessaire aux finalités
+      pour lesquelles elles ont été collectées.
+    </p>
+
+    <p>
+      Les demandes de contact peuvent être conservées
+      jusqu’à 3 ans après le dernier échange.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>6. Hébergement</h2>
+
+    <p>
+      Le site est hébergé par :
+    </p>
+
+    <p>
+      <strong>Netlify, Inc.</strong><br>
+      2325 3rd Street, Suite 296<br>
+      San Francisco, California 94107 – USA<br>
+
+      Site :
+      <a href="https://www.netlify.com">
+        www.netlify.com
+      </a>
+    </p>
+
+    <p>
+      Certains traitements de données peuvent impliquer
+      un transfert hors de l’Union Européenne,
+      notamment via les services de Netlify,
+      hébergeur situé aux États-Unis.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>7. Cookies</h2>
+
+    <p>
+      Le site peut utiliser des cookies techniques
+      nécessaires au bon fonctionnement
+      et à l’amélioration de l’expérience utilisateur.
+    </p>
+
+    <p>
+      Certains contenus intégrés provenant
+      de services tiers
+      (Google Maps, Instagram, Facebook, avis Google)
+      peuvent collecter des données techniques
+      ou déposer des cookies indépendamment
+      de Esquad Auto Expert.
+    </p>
+
+    <p>
+      Vous pouvez configurer votre navigateur
+      afin de refuser tout ou partie des cookies.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>8. Partage des données</h2>
+
+    <p>
+      Les données personnelles ne sont ni vendues,
+      ni louées, ni cédées à des tiers.
+    </p>
+
+    <p>
+      Elles peuvent uniquement être transmises
+      à des prestataires techniques nécessaires
+      au fonctionnement du site
+      (hébergement, formulaires de contact,
+      services de messagerie,
+      outils de communication).
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>9. Sécurité</h2>
+
+    <p>
+      Esquad Auto Expert met en œuvre
+      des mesures techniques
+      et organisationnelles adaptées
+      afin de protéger les données personnelles
+      contre tout accès non autorisé,
+      perte, altération ou divulgation.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>10. Vos droits</h2>
+
+    <p>
+      Conformément au RGPD
+      et à la loi Informatique et Libertés,
+      vous disposez des droits suivants :
+    </p>
+
+    <ul>
+      <li>Droit d’accès</li>
+      <li>Droit de rectification</li>
+      <li>Droit d’effacement</li>
+      <li>Droit d’opposition</li>
+      <li>Droit à la limitation du traitement</li>
+      <li>Droit à la portabilité des données</li>
+    </ul>
+
+    <p>
+      Pour exercer vos droits :
+      <a href="mailto:esquad.auto97@gmail.com">
+        esquad.auto97@gmail.com
+      </a>
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>11. Contact</h2>
+
+    <p>
+      Pour toute question concernant
+      cette politique de confidentialité :
+    </p>
+
+    <p>
+      Email :
+      <a href="mailto:esquad.auto97@gmail.com">
+        esquad.auto97@gmail.com
+      </a><br>
+
+      Téléphone :
+      +596 696 29 42 57
+    </p>
+
+  </section>
+
+  <footer>
+
+    <div class="muted">
+
+      Dernière mise à jour :
+      <time datetime="2026-05-22">
+        22 mai 2026
+      </time>
+
+    </div>
+
+  </footer>
+
+</div>
+
+</body>
+</html>

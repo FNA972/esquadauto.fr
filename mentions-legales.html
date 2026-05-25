@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mentions légales – Esquad Auto Expert</title>
+  <meta name="description" content="Mentions légales du site Esquad Auto Expert (esquadauto.fr)." />
+  <style>
+    :root{
+      --muted:#9fb0c3; --text:#e8eef7; --accent:#3aa6ff;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:#000; /* fond noir simple */
+      color:var(--text);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:48px auto;padding:0 20px;background:rgba(0,0,0,0.65);border-radius:12px;opacity:0;transform:translateY(40px);transition:all 0.8s ease-out}
+    .wrap.visible{opacity:1;transform:translateY(0)}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:24px}
+    .logo img{width:100px;height:100px;border-radius:12px;display:block;transition:transform 0.3s ease, box-shadow 0.3s ease;cursor:pointer}
+    .logo img:hover{transform:scale(1.1);box-shadow:0 4px 12px rgba(0,0,0,0.5)}
+    .logo img:active{transform:scale(0.95);box-shadow:0 2px 6px rgba(0,0,0,0.6)}
+    h1{font-size:clamp(2.2rem,3vw,3rem);margin:0}
+    h2{font-size:1.6rem;margin:28px 0 14px 0;opacity:0;transform:translateY(30px);transition:all 0.6s ease-out}
+    h2.visible{opacity:1;transform:translateY(0)}
+    section p{opacity:0;transform:translateY(20px);transition:all 0.6s ease-out}
+    section p.visible{opacity:1;transform:translateY(0)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .muted{color:var(--muted)}
+    footer{margin:28px 0 60px;color:var(--muted);font-size:.95rem;opacity:0;transform:translateY(20px);transition:all 0.6s ease-out}
+    footer.visible{opacity:1;transform:translateY(0)}
+    @media (max-width:780px){.grid{grid-template-columns:1fr}}
+  </style>
+  <script>
+    // Bloquer le clic droit
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Animation scroll-based
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {threshold:0.1});
+
+      document.querySelectorAll('.wrap, h2, section p, footer').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <a href="https://esquadauto.fr">
+          <img src="logo4k.png" alt="Logo Esquad Auto Expert" />
+        </a>
+      </div>
+      <div>
+        <h1>Mentions légales</h1>
+        <div class="muted">Site : <strong><a href="https://esquadauto.fr">esquadauto.fr</a></strong><br/>Éditeur : <strong>Esquad Auto Expert</strong></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Éditeur du site</h2>
+      <div class="grid">
+        <div>
+          <p><strong>Nom commercial :</strong> EsquadAuto / Esquad Auto Expert</p>
+          <p><strong>Forme :</strong> Entrepreneur Individuel</p>
+          <p><strong>Entrepreneur :</strong> Anthony CORALIE</p>
+          <p><strong>SIREN :</strong> 982 325 664 — <strong>SIRET :</strong> 982 325 664 00018</p>
+          <p><strong>N° TVA intracommunautaire :</strong> FR22 982 325 664</p>
+        </div>
+        <div>
+          <p><strong>Siège social :</strong><br/>1161 Quartier Sérail, 97212 Saint‑Joseph, Martinique</p>
+          <p><strong>Adresse d’activité :</strong><br/>69 Rue Emmanuel Courant, 97232 Le Lamentin, Martinique</p>
+          <p><strong>Téléphone :</strong> +596 696 29 42 57</p>
+          <p><strong>E‑mail :</strong> <a href="mailto:esquad.auto97@gmail.com">esquad.auto97@gmail.com</a></p>
+        </div>
+      </div>
+      <p class="muted">Directeur de la publication : Anthony CORALIE.</p>
+    </section>
+
+    <section>
+      <h2>Hébergeur du site</h2>
+      <p><strong>Netlify, Inc.</strong><br/>
+      2325 3rd Street, Suite 296<br/>
+      San Francisco, California 94107 – USA<br/>
+      Site : <a href="https://www.netlify.com">www.netlify.com</a></p>
+    </section>
+
+    <section>
+      <h2>Propriété intellectuelle</h2>
+      <p>L’ensemble des contenus (textes, visuels, logos, charte graphique) du site <strong><a href="https://esquadauto.fr">esquadauto.fr</a></strong> est protégé par le droit d’auteur. Toute reproduction, représentation ou adaptation, totale ou partielle, sans autorisation écrite préalable, est interdite.</p>
+      <p>Les marques et logos de tiers mentionnés demeurent la propriété de leurs détenteurs respectifs (ex. Google, Meta/Instagram).</p>
+    </section>
+
+    <section>
+      <h2>Données personnelles & cookies</h2>
+      <p>Les données transmises via les moyens de contact (téléphone, e‑mail, WhatsApp) sont traitées par EsquadAuto pour la gestion des demandes et la réalisation de prestations de service de teinte automobile, sur la base de l’exécution de mesures précontractuelles et du contrat (art. 6‑1‑b RGPD) ou du consentement lorsque requis.</p>
+      <p>Le site peut intégrer des contenus tiers (ex. avis Google, liens Instagram/Facebook) susceptibles de déposer des cookies techniques ou de mesure d’audience. Vous pouvez configurer votre navigateur pour les refuser. Pour toute question relative à vos données ou pour exercer vos droits (accès, rectification, opposition, effacement, limitation, portabilité), contactez : <a href="mailto:esquad.auto97@gmail.com">esquad.auto97@gmail.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>Limitation de responsabilité</h2>
+      <p>EsquadAuto s’efforce d’assurer l’exactitude et la mise à jour des informations publiées. Toutefois, des erreurs ou omissions peuvent survenir. L’internaute est invité à vérifier toute information utile et à signaler toute inexactitude. EsquadAuto ne saurait être tenu responsable des dommages directs ou indirects résultant de l’utilisation du site ou de l’impossibilité d’y accéder.</p>
+    </section>
+
+    <section>
+      <h2>Médiation de la consommation</h2>
+      <p>Tout client consommateur est informé de la possibilité de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d’un litige relatif aux prestations de service de teinte automobile.</p>
+      <p class="muted"><em>(Médiateur en attente d’adhésion – les coordonnées du médiateur agréé seront publiées dès finalisation de l’adhésion).</em></p>
+    </section>
+
+    <section>
+      <h2>Droit applicable</h2>
+      <p>Le présent site et ses mentions légales sont soumis au droit français. Les tribunaux compétents sont ceux du ressort du siège social de l’éditeur, sous réserve d’une médiation préalable lorsque applicable.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Pour toute question relative aux mentions légales :<br/> Email : <a href="mailto:esquad.auto97@gmail.com">esquad.auto97@gmail.com</a><br/>Tél : +596 696 29 42 57</p>
+    </section>
+
+    <footer>
+      <div class="muted">Dernière mise à jour : <time datetime="2025-08-19">19 août 2025</time></div>
+    </footer>
+  </div>
+</body>
+</html>
