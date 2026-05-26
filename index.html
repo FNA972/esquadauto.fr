@@ -3217,61 +3217,38 @@ pensée pour l'esthétique et
 
         <div class="contact-form-wrapper reveal-right">
 
-<form 
-    class="contact-form"
-    name="contact"
-    method="POST"
-    data-netlify="true"
->
+<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
 
-    <!-- Obligatoire pour Netlify -->
-    <input type="hidden" name="form-name" value="contact">
+    <!-- Clé Web3Forms -->
+    <input type="hidden" name="access_key" value="4645c40e-94d7-4bfb-8d45-5f99e6da095b">
+
+    <!-- Sujet -->
+    <input type="hidden" name="subject" value="Nouveau contact Esquad Auto Expert">
+
+    <!-- Anti-spam -->
+    <input type="checkbox" name="botcheck" style="display:none;">
 
     <div class="form-grid">
 
         <div class="form-group">
             <label>Nom</label>
-            <input 
-                type="text" 
-                name="nom"
-                placeholder="Votre nom"
-                required
-            >
+            <input type="text" name="name" placeholder="Votre nom" required>
         </div>
 
         <div class="form-group">
-            <label>Téléphone</label>
-            <input 
-                type="text" 
-                name="telephone"
-                placeholder="Votre numéro"
-                required
-            >
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Votre email" required>
         </div>
 
-    </div>
-
-    <div class="form-group">
-        <label>Email</label>
-        <input 
-            type="email" 
-            name="email"
-            placeholder="Votre adresse email"
-            required
-        >
     </div>
 
     <div class="form-group">
         <label>Message</label>
-        <textarea 
-            name="message"
-            placeholder="Décrivez votre projet automobile..."
-            required
-        ></textarea>
+        <textarea name="message" placeholder="Votre message" required></textarea>
     </div>
 
     <button type="submit" class="contact-submit">
-        Envoyer la demande
+        Envoyer le message
     </button>
 
 </form>
